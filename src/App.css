@@ -3,19 +3,19 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 1s linear;
+    animation: App-logo-spin infinite 5s linear;
   }
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,10 +29,61 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  0% {
+    transform: rotate(0deg) scale(0.5);
+  } 50% {
+    transform: rotate(-180deg) scale(1);
   }
-  to {
-    transform: rotate(-360deg);
+  100% {
+    transform: rotate(-360deg) scale(0.5);
   }
+}
+
+.App-body {
+  justify-content: center
+}
+
+.input {
+  width: 30vw;
+  padding: 1rem;
+}
+
+.inline {
+  align-items: center;
+  display: flex
+}
+
+.burrito {
+  font-weight: bold;
+}
+
+.wrap {
+  font-style: italic;
+  color: burlywood;
+}
+
+.sauce {
+  color: limegreen
+}
+
+.hot {
+  color: red;
+}
+
+.custom {
+  color: yellow;
+}
+
+.burrito-area {
+  background-color: rgb(10, 10, 63);
+  padding: 3em
+}
+
+.button {
+  padding: 2em;
+  background-color: orange;
+  border-radius: 1rem;
+  border-width: 0;
+  font-weight: bold;
+  margin: 2em;
 }
