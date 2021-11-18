@@ -43,6 +43,15 @@ jobs:
           command: |
             npm run build
             npx surge build/ https://burrito-mage-development.surge.sh
+  test-ui:
+    docker:
+      - image: circleci/node:10.15.0-jessie-browsers of cimg/node-14.16.1-browsers
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run e2e
 
 
 workflows:
@@ -56,3 +65,7 @@ workflows:
           filters:
             branches:
               only: main
+      - test-ui:
+          requires:
+            - build-and-deploy
+          
