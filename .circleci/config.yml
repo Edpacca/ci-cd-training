@@ -45,6 +45,9 @@ jobs:
       - serve:
           name: serve surge
           command: npx surge build/ https://burrito-mage-development.surge.sh
+              environment:
+                SURGE_LOGIN: $SURGE_EMAIL
+                SURGE_TOKEN: $SURGE_TOKEN
 
 
 workflows:
@@ -58,8 +61,3 @@ workflows:
           filters:
             branches:
               only: master
-    context:
-      -SL Grad Training
-    environment:
-      SURGE_LOGIN: $SURGE_EMAIL
-      SURGE_TOKEN: $SURGE_TOKEN
