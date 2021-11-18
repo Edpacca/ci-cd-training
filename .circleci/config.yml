@@ -45,7 +45,7 @@ jobs:
             npx surge build/ https://burrito-mage-development.surge.sh
   test-ui:
     docker:
-      - image: circleci/node-14.17.4-browsers
+      - image: circleci/node:14.17.4-browsers
     steps:
       - checkout
       - node/install-packages:
