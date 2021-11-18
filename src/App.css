@@ -111,3 +111,11 @@
   margin: 2em;
 }
 
+.reset-button {
+  padding: 1em;
+  background-color: orange;
+  border-radius: 1rem;
+  border-width: 0;
+  font-weight: bold;
+  margin: 2em;
+}

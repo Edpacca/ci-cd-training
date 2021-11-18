@@ -121,7 +121,7 @@ function App() {
       }
       </div>
 
-      <button onClick={() => reset()}>start over</button>
+      <button onClick={() => reset()} className="reset-button">start over</button>
     </div>
   );
 }
