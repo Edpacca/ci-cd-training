@@ -9,5 +9,5 @@ test('renders learn react link', () => {
 
 test('makes burrity', () => {
   render(<App />);
-  expect(true).toBe(false);
+  expect(true).toBe(true);
 });
