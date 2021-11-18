@@ -10,6 +10,7 @@ function App() {
   const [isExtra, setIsExtra] = useState(false);
   const [extra, setExtra] = useState(1);
   const [spice, setSpice] = useState(0);
+  const [size, setSize] = useState(3);
 
   function makeBurrito() {
 
@@ -23,6 +24,12 @@ function App() {
       setExtra(3)
     } else {
       setExtra(1)
+    }
+
+  
+    const sizevalue = document.querySelector('input[name="size"]:checked').value
+    if (sizevalue) {
+      setSize(sizevalue);
     }
 
     setSpice(document.getElementById("spice").value / 10);
@@ -41,11 +48,13 @@ function App() {
     setSauce("");
     setExtra(1);
     setSpice(0);
+    setSize(3);
   }
 
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className="title">BURRITO MAGE</h1>
         <img src={logo} className="App-logo" alt="logo" />
       </header>
 
@@ -54,8 +63,27 @@ function App() {
         <br/>
         <ul>
           <li>
+            <span className="inline">
+              <input type="radio" id="small" name="size" value="3"/>
+              <label>Small</label>
+            </span>  
+            <span className="inline">
+            <input type="radio" id="medium" name="size" value="5"/>
+              <label>Medium</label>
+            </span>  
+            <span className="inline">
+            <input type="radio" id="large" name="size" value="7"/>
+              <label>Large</label>
+            </span>
+            <span className="inline">
+            <input type="radio" id="super" name="size" value="11"/>
+              <label>Sooper Size</label>
+            </span>
+          </li>
+          <br/>
+          <li>
             <div className="inline">
-              <select name="sauce" id="sauce">
+              <select name="sauce" id="sauce" className="input">
                 <option value="select">Select sauce</option>
                 <option value="Lemon 'n' lime">Lemon'n'Lime</option>
                 <option value="Flaming hot">Flaming hot</option>
@@ -84,11 +112,11 @@ function App() {
       {
         isMade &&
         <div className="burrito">
-          {makeIngredients(5, "WRAP", "wrap")}
+          {makeIngredients(size, "WRAP", "wrap")}
           {makeIngredients(extra, sauce, "sauce")}
           {makeIngredients(spice, "hot", "hot")}
-          {makeIngredients(5, custom, "custom")}
-          {makeIngredients(5, "WRAP", "wrap")}
+          {makeIngredients(size, custom, "custom")}
+          {makeIngredients(size, "WRAP", "wrap")}
         </div>
       }
       </div>

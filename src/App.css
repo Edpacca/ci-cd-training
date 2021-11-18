@@ -7,9 +7,16 @@
   pointer-events: none;
 }
 
+.title {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 5s linear;
+  }
+  .title {
+    animation: title-animation 3s infinite linear;
   }
 }
 
@@ -22,10 +29,22 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin-bottom: 2em;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+@keyframes title-animation {
+  0% { color: red;}
+  14% { color: orange;}
+  28% { color: yellow;}
+  42% { color: lime;}
+  56% { color: aqua;}
+  70% { color: blue;}
+  84% { color: magenta;}
+  100% { color: red;}
 }
 
 @keyframes App-logo-spin {
@@ -40,12 +59,16 @@
 }
 
 .App-body {
-  justify-content: center
+  align-items: center;
+  font-size: large;
+  width: 50vw;
+  margin: auto;
 }
 
 .input {
   width: 30vw;
   padding: 1rem;
+  font-size: large;
 }
 
 .inline {
@@ -87,3 +110,4 @@
   font-weight: bold;
   margin: 2em;
 }
+
