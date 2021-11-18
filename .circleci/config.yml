@@ -41,8 +41,7 @@ jobs:
           pkg-manager: npm
       - run:
           command: 
-            npm run build
-            npx surge build/ https://burrito-mage-development.surge.sh
+            npm run build && npx surge build/ https://burrito-mage-development.surge.sh
           environment:
             SURGE_LOGIN: $SURGE_EMAIL
             SURGE_TOKEN: $SURGE_TOKEN
