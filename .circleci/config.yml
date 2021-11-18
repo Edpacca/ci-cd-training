@@ -39,11 +39,10 @@ jobs:
       - node/install-packages:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
-      - build:
-          command: npm run build
-      - serve:
-          name: serve surge
-          command: npx surge build/ https://burrito-mage-development.surge.sh
+      - run:
+          command: 
+            npm run build
+            npx surge build/ https://burrito-mage-development.surge.sh
           environment:
             SURGE_LOGIN: $SURGE_EMAIL
             SURGE_TOKEN: $SURGE_TOKEN
